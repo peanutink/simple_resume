@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -131,7 +131,7 @@
 
 <div class="container">
 {% block main %}
-{% endblock main %}
+
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#one" data-toggle="tab">One</a></li>
         <li><a href="#two" data-toggle="tab">Two</a></li>
@@ -141,9 +141,9 @@
     <div class="tab-content">
         <div class="tab-pane active" id="one">
             <div class="media-list">
-                {% for people in people_list1 %}
+               {% for people in people_list1 %}
                     <a class="media">
-                        <a class="pull-left" href="#">
+                        <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
@@ -154,13 +154,15 @@
                     </a>
                     <hr>
                 {% endfor %}
+
             </div>
         </div>
+
         <div class="tab-pane" id="two">
             <div class="media-list">
                 {% for people in people_list2 %}
                     <a class="media">
-                        <a class="pull-left" href="#">
+                        <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
@@ -177,7 +179,7 @@
             <div class="media-list">
                 {% for people in people_list3 %}
                     <a class="media">
-                        <a class="pull-left" href="#">
+                        <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
@@ -194,7 +196,7 @@
             <div class="media-list">
                 {% for people in people_list4 %}
                     <a class="media">
-                        <a class="pull-left" href="#">
+                        <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
@@ -209,6 +211,7 @@
         </div>
     </div>
 </div>
+{% endblock main %}
 <a style="display:block ;position:fixed ;top:80%;left:95%" href="#">返回顶部</a>
 
 </body>
