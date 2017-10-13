@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'resume2/(?P<pk>[0-9]+)/$', views.detail2, name="detail2"),
     url(r'resume3/(?P<pk>[0-9]+)/$', views.detail3, name="detail3"),
     url(r'resume4/(?P<pk>[0-9]+)/$', views.detail4, name="detail4"),
-    url(r'^search/$',views.search,name='search'),
+    url(r'^search/$', views.search, name='search'),
 ]

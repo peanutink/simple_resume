@@ -18,9 +18,11 @@
             padding: 0;
             margin: 0;
         }
-        .tab-pane ul{
+
+        .tab-pane ul {
             margin-top: 10px;
         }
+
         .carousel {
             height: 550px;
             background-color: #000000;
@@ -34,9 +36,11 @@
             height: 500px;
             background-color: #000000;
         }
-        .carousel-ad{
-            padding:0;
+
+        .carousel-ad {
+            padding: 0;
         }
+
         .container {
             padding-top: 30px;
             background-color: #ffffff;
@@ -132,92 +136,88 @@
 </div>
 
 
-
-
-
-
 <div class="container">
-{% block main %}
-    <ul class="nav nav-tabs" id="myTab">
-        <li class="active"><a href="#one" data-toggle="tab">One</a></li>
-        <li><a href="#two" data-toggle="tab">Two</a></li>
-        <li><a href="#three" data-toggle="tab">Three</a></li>
-        <li><a href="#four" data-toggle="tab">Four</a></li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane active" id="one">
-            <ul class="media-list">
-               {% for people in people_list1 %}
-                    <li class="media">
-                        <a class="pull-left" href="{{ people.get_absolute_url }}">
-                            <img class="media-object" style="height: 100px;width: 100px;"
-                                 src="{{ people.picture }}" alt="tupian">
-                        </a>
-                        <div class="media-body">
-                            <h2 class="media-haading">{{ people.name }}</h2>
-                            <div>{{ people.message }}</div>
-                        </div>
-                    </li>
-                    <hr>
-                {% endfor %}
+    {% block main %}
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#one" data-toggle="tab">One</a></li>
+            <li><a href="#two" data-toggle="tab">Two</a></li>
+            <li><a href="#three" data-toggle="tab">Three</a></li>
+            <li><a href="#four" data-toggle="tab">Four</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="one">
+                <ul class="media-list">
+                    {% for people in people_list1 %}
+                        <li class="media">
+                            <a class="pull-left" href="{{ people.get_absolute_url }}">
+                                <img class="media-object" style="height: 100px;width: 100px;"
+                                     src="{{ people.picture }}" alt="tupian">
+                            </a>
+                            <div class="media-body">
+                                <h2 class="media-haading">{{ people.name }}</h2>
+                                <div>{{ people.message }}</div>
+                            </div>
+                        </li>
+                        <hr>
+                    {% endfor %}
 
-            </ul>
-        </div>
+                </ul>
+            </div>
 
-        <div class="tab-pane" id="two">
-            <ul class="media-list">
-                {% for people in people_list2 %}
-                    <li class="media">
-                        <a class="pull-left" href="{{ people.get_absolute_url }}">
-                            <img class="media-object" style="height: 100px;width: 100px;"
-                                 src="{{ people.picture }}" alt="tupian">
-                        </a>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{ people.name }}</h2>
-                            <div>{{ people.message }}</div>
-                        </div>
-                    </li>
-                    <hr>
-                {% endfor %}
-            </ul>
+            <div class="tab-pane" id="two">
+                <ul class="media-list">
+                    {% for people in people_list2 %}
+                        <li class="media">
+                            <a class="pull-left" href="{{ people.get_absolute_url }}">
+                                <img class="media-object" style="height: 100px;width: 100px;"
+                                     src="{{ people.picture }}" alt="tupian">
+                            </a>
+                            <div class="media-body">
+                                <h2 class="media-heading">{{ people.name }}</h2>
+                                <div>{{ people.message }}</div>
+                            </div>
+                        </li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane" id="three">
+                <ul class="media-list">
+                    {% for people in people_list3 %}
+                        <li class="media">
+                            <a class="pull-left" href="{{ people.get_absolute_url }}">
+                                <img class="media-object" style="height: 100px;width: 100px;"
+                                     src="{{ people.picture }}" alt="tupian">
+                            </a>
+                            <div class="media-body">
+                                <h2 class="media-heading">{{ people.name }}</h2>
+                                <div>{{ people.message }}</div>
+                            </div>
+                        </li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane" id="four">
+                <ul class="media-list">
+                    {% for people in people_list4 %}
+                        <li class="media">
+                            <a class="pull-left" href="{{ people.get_absolute_url }}">
+                                <img class="media-object" style="height: 100px;width: 100px;"
+                                     src="{{ people.picture }}" alt="tupian">
+                            </a>
+                            <div class="media-body">
+                                <h2 class="media-heading">{{ people.name }}</h2>
+                                <div>{{ people.message }}</div>
+                            </div>
+                        </li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="tab-pane" id="three">
-            <ul class="media-list">
-                {% for people in people_list3 %}
-                    <li class="media">
-                        <a class="pull-left" href="{{ people.get_absolute_url }}">
-                            <img class="media-object" style="height: 100px;width: 100px;"
-                                 src="{{ people.picture }}" alt="tupian">
-                        </a>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{ people.name }}</h2>
-                            <div>{{ people.message }}</div>
-                        </div>
-                    </li>
-                    <hr>
-                {% endfor %}
-            </ul>
         </div>
-        <div class="tab-pane" id="four">
-            <ul class="media-list">
-                {% for people in people_list4 %}
-                    <li class="media">
-                        <a class="pull-left" href="{{ people.get_absolute_url }}">
-                            <img class="media-object" style="height: 100px;width: 100px;"
-                                 src="{{ people.picture }}" alt="tupian">
-                        </a>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{ people.name }}</h2>
-                            <div>{{ people.message }}</div>
-                        </div>
-                    </li>
-                    <hr>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-</div>
-        {% endblock main %}
+    {% endblock main %}
 <a style="display:block ;position:fixed ;top:80%;left:95%" href="#">返回顶部</a>
 
 </body>

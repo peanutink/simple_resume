@@ -47,7 +47,7 @@ def search(request):
     people_list3 = People3.objects.filter(Q(name__icontains=q) | Q(message__icontains=q))
     people_list4 = People4.objects.filter(Q(name__icontains=q) | Q(message__icontains=q))
     return render(request, 'myResume.html', {'error_msg': error_msg,
-                                         'people_list': people_list,
-                                         'people_list2': people_list2,
-                                         'people_list3': people_list3,
-                                         'people_list4': people_list4})
+                                             'people_list': people_list,
+                                             'people_list2': people_list2,
+                                             'people_list3': people_list3,
+                                             'people_list4': people_list4})
