@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from resume import views
-app_name="resume"
+
+app_name = "resume"
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/',views.index),
-    url(r'resume/(?P<pk>[0-9]+)/$',views.detail,name="detail"),
-url(r'resume2/(?P<pk>[0-9]+)/$',views.detail2,name="detail2"),
-url(r'resume3/(?P<pk>[0-9]+)/$',views.detail3,name="detail3"),
-url(r'resume4/(?P<pk>[0-9]+)/$',views.detail4,name="detail4"),
+    url(r'^index/', views.index),
+    url(r'resume/(?P<pk>[0-9]+)/$', views.detail, name="detail"),
+    url(r'resume2/(?P<pk>[0-9]+)/$', views.detail2, name="detail2"),
+    url(r'resume3/(?P<pk>[0-9]+)/$', views.detail3, name="detail3"),
+    url(r'resume4/(?P<pk>[0-9]+)/$', views.detail4, name="detail4"),
+    url(r'^search/$',views.search,name='search'),
 ]

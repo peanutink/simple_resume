@@ -18,7 +18,9 @@
             padding: 0;
             margin: 0;
         }
-
+        .tab-pane ul{
+            margin-top: 10px;
+        }
         .carousel {
             height: 550px;
             background-color: #000000;
@@ -52,20 +54,20 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a href="##" class="navbar-brand">简历</a>
+        <a href="/index/" class="navbar-brand">简历</a>
     </div>
 
     <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="##">首页</a></li>
-            <li><a href="##">导航一</a></li>
-            <li><a href="##">导航二</a></li>
+            <li><a href="#">导航一</a></li>
+            <li><a href="#">导航二</a></li>
             <li><a href="##">导航三</a></li>
             <li><a href="##">导航四</a></li>
         </ul>
-        <form action="##" class="navbar-form navbar-right form-inline" rol="search">
+        <form action="{% url 'search' %}" class="navbar-form navbar-right form-inline" rol="search" method="get">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="请输入关键词"/>
+                <input name="q" type="search" class="form-control" placeholder="请输入关键词"/>
             </div>
             <button type="submit" class="btn btn-default">搜索</button>
 
@@ -129,9 +131,13 @@
 
 </div>
 
+
+
+
+
+
 <div class="container">
 {% block main %}
-
     <ul class="nav nav-tabs" id="myTab">
         <li class="active"><a href="#one" data-toggle="tab">One</a></li>
         <li><a href="#two" data-toggle="tab">Two</a></li>
@@ -140,9 +146,9 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="one">
-            <div class="media-list">
+            <ul class="media-list">
                {% for people in people_list1 %}
-                    <a class="media">
+                    <li class="media">
                         <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
@@ -151,67 +157,67 @@
                             <h2 class="media-haading">{{ people.name }}</h2>
                             <div>{{ people.message }}</div>
                         </div>
-                    </a>
+                    </li>
                     <hr>
                 {% endfor %}
 
-            </div>
+            </ul>
         </div>
 
         <div class="tab-pane" id="two">
-            <div class="media-list">
+            <ul class="media-list">
                 {% for people in people_list2 %}
-                    <a class="media">
+                    <li class="media">
                         <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
                         <div class="media-body">
-                            <h2 class="media-haading">{{ people.name }}</h2>
+                            <h2 class="media-heading">{{ people.name }}</h2>
                             <div>{{ people.message }}</div>
                         </div>
-                    </a>
+                    </li>
                     <hr>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
         <div class="tab-pane" id="three">
-            <div class="media-list">
+            <ul class="media-list">
                 {% for people in people_list3 %}
-                    <a class="media">
+                    <li class="media">
                         <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
                         <div class="media-body">
-                            <h2 class="media-haading">{{ people.name }}</h2>
+                            <h2 class="media-heading">{{ people.name }}</h2>
                             <div>{{ people.message }}</div>
                         </div>
-                    </a>
+                    </li>
                     <hr>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
         <div class="tab-pane" id="four">
-            <div class="media-list">
+            <ul class="media-list">
                 {% for people in people_list4 %}
-                    <a class="media">
+                    <li class="media">
                         <a class="pull-left" href="{{ people.get_absolute_url }}">
                             <img class="media-object" style="height: 100px;width: 100px;"
                                  src="{{ people.picture }}" alt="tupian">
                         </a>
                         <div class="media-body">
-                            <h2 class="media-haading">{{ people.name }}</h2>
+                            <h2 class="media-heading">{{ people.name }}</h2>
                             <div>{{ people.message }}</div>
                         </div>
-                    </a>
+                    </li>
                     <hr>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
     </div>
 </div>
-{% endblock main %}
+        {% endblock main %}
 <a style="display:block ;position:fixed ;top:80%;left:95%" href="#">返回顶部</a>
 
 </body>
