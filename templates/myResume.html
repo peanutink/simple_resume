@@ -21,7 +21,19 @@
         </li>
         <hr>
     {% endfor %}
-
+    <li class="media">
+        <a class="pull-left" href="{{ people.get_absolute_url }}">
+            <img class="media-object pull-right img-circle:20% " height="100px" width="100px"
+                 src="{{ people.picture }}"
+                 alt="zhaopian">
+        </a>
+        <div class="media-body">
+            <h3 class="media-heading">{{ people.name }}</h3>
+            <h4>{{ people.message }}</h4>
+            <h4></h4>
+        </div>
+    </li>
+    <hr>
     {% for people in people_list2 %}
 
 
